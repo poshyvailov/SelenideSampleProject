@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
@@ -30,7 +31,7 @@ public class LoginPage {
         open("https://jira.hillel.it/secure/Dashboard.jspa");
     }
 
-    public void waitUntilLoginPageWillBeOpen(){
+    public void waitUntilLoginPageWillBeOpen() {
         $(userNameField).shouldBe(Condition.visible);
     }
 

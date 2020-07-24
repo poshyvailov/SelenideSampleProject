@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="My Tests" parallel="classes" thread-count="2">
+
+    <test name="Jira Tests">
+        <parameter name="browserName" value="chrome"/>
+        <classes>
+            <class name="SampleSelenideTest"/>
+        </classes>
+    </test>
+
+    <listeners>
+        <listener class-name="Utills.TestNGListener"/>
+    </listeners>
+
+</suite>
