@@ -1,14 +1,12 @@
 import Pages.JiraMainPage;
 import Pages.LoginPage;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Parameters;
+import org.testng.annotations.*;
+
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static com.codeborne.selenide.Selenide.*;
 import static org.testng.AssertJUnit.assertTrue;
 
 import com.codeborne.selenide.Configuration;
-import org.testng.annotations.Test;
 
 import java.security.PublicKey;
 
@@ -53,6 +51,10 @@ public class LoginPositiveAndNegativeTests {
         loginPage.enterUserPassword("poshyvailov");
         loginPage.clickLoginButton();
         loginPage.waitUntilDashboardWillBeOpen();
+    }
+
+    @AfterMethod
+    public void tearDown(){
     }
 
 
