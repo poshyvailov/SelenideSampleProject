@@ -5,6 +5,8 @@
         <parameter name="browserName" value="chrome"/>
         <classes>
             <class name="SampleSelenideTest"/>
+            <class name="CreateTicket"/>
+            <class name="AddCommentToTheTicket"/>
         </classes>
     </test>
 
