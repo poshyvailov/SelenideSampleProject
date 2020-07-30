@@ -6,9 +6,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import com.codeborne.selenide.Config;
-
-import java.security.Key;
 
 import static com.codeborne.selenide.Selenide.$;
 
@@ -59,7 +56,7 @@ public class CreateTicketWindow {
         $(ticketSummaryField).sendKeys(summary);
     }
 
-    public void ticketSummaryFieldPressTabButton(){
+    public void ticketSummaryFieldPressTabButton() {
         $(ticketSummaryField).sendKeys(Keys.TAB);
     }
 

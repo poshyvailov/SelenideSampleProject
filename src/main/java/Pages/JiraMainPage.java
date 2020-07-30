@@ -20,40 +20,39 @@ public class JiraMainPage {
     private WebElement searchTicketField = $(By.id("quickSearchInput"));
 
 
-
-    public void checkIfMainPageIsOpen(){
+    public void checkIfMainPageIsOpen() {
         $(By.xpath("//*[@id='dashboard-content']//h1")).shouldBe(Condition.visible);
     }
 
-    public void waitUntilOpenListOfAssignedTickets(){
+    public void waitUntilOpenListOfAssignedTickets() {
         $(By.xpath("//*[@class='date-header' and contains(text(), 'Today')]")).shouldBe(Condition.visible);
     }
 
-    public void isCreateTicketButtonIsActive(){
+    public void isCreateTicketButtonIsActive() {
         $(createButton).shouldBe(Condition.enabled);
     }
 
-    public void checkIfJiraMainPageIsFullyOpened(){
+    public void checkIfJiraMainPageIsFullyOpened() {
         $(By.id("browse_link")).shouldBe(Condition.enabled);
     }
 
-    public void clickOnTheCreateButton(){
+    public void clickOnTheCreateButton() {
         $(createButton).click();
     }
 
-    public void checkIfCreateTicketWindowIsOpen(){
+    public void checkIfCreateTicketWindowIsOpen() {
         $(By.xpath("//h2[@title='Create Issue']")).shouldBe(Condition.visible);
     }
 
-    public void waitingWhenSearchFieldWillAppear(){
+    public void waitingWhenSearchFieldWillAppear() {
         $(searchTicketField).shouldBe(Condition.visible);
     }
 
-    public void typeTicketNameToSearch(String ticketName){
+    public void typeTicketNameToSearch(String ticketName) {
         $(searchTicketField).sendKeys(ticketName);
     }
 
-    public void pressEnterForSearchField(){
+    public void pressEnterForSearchField() {
         $(searchTicketField).sendKeys(Keys.ENTER);
     }
 
