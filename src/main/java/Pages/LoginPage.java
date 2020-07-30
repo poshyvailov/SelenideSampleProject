@@ -1,17 +1,12 @@
 package Pages;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.Configuration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
-
-import java.time.Duration;
-
-import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
 
 public class LoginPage {
 
@@ -52,7 +47,8 @@ public class LoginPage {
     }
 
     public void isErrorsMessageIsShown(String errorMessage) {
-        $(By.xpath("//*[contains(text(),'\" + errorMessage + \"')]")).shouldBe(Condition.visible);
+        $(By.linkText(errorMessage)).shouldBe(Condition.visible);
+//        $(By.xpath("//*[contains(text(),'\" + errorMessage + \"')]")).shouldBe(Condition.visible);
     }
 
 

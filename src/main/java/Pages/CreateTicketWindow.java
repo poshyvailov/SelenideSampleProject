@@ -1,10 +1,12 @@
 package Pages;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.Configuration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import com.codeborne.selenide.Config;
 
 import java.security.Key;
 

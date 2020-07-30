@@ -1,5 +1,4 @@
 import Pages.LoginPage;
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Config;
 import com.codeborne.selenide.Configuration;
 import org.openqa.selenium.By;
@@ -20,6 +19,8 @@ public class SampleSelenideTest {
         Configuration.browser = browserName;
         open();
         loginPage = new LoginPage(getWebDriver());
+        Configuration.timeout = 10000;
+
     }
 
 

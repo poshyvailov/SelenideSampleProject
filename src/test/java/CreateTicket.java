@@ -1,6 +1,7 @@
 import Pages.CreateTicketWindow;
 import Pages.JiraMainPage;
 import Pages.LoginPage;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import static com.codeborne.selenide.Selenide.*;
@@ -19,6 +20,7 @@ public class CreateTicket {
     public void setUp(String browserName){
         Configuration.browser = browserName;
         open();
+        Configuration.timeout = 10000;
         loginPage = new LoginPage(getWebDriver());
         jiraMainPage = new JiraMainPage(getWebDriver());
         createTicketWindow = new CreateTicketWindow(getWebDriver());
@@ -60,7 +62,11 @@ public class CreateTicket {
         //Проверяем что в поп апе есть названия проекта,в который был создан тикет ("WEBINAR")
         createTicketWindow.checkIfPopUpContainsWebinarName();
         createTicketWindow.checkIfPopUpContainsWebinarName();
+    }
 
+    @AfterMethod
+    public void tearDown(){
+        close();
     }
 
 }

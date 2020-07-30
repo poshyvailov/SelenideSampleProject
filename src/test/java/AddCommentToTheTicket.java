@@ -1,11 +1,13 @@
 import Pages.JiraMainPage;
 import Pages.LoginPage;
 import Pages.TicketDetails;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import com.codeborne.selenide.Configuration;
 import org.testng.annotations.Test;
 
+import static com.codeborne.selenide.Selenide.close;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static com.codeborne.selenide.WebDriverRunner.isOpera;
@@ -22,6 +24,7 @@ public class AddCommentToTheTicket {
     public void setUp(String browserName){
         open();
         Configuration.browser = browserName;
+        Configuration.timeout = 10000;
         loginPage = new LoginPage(getWebDriver());
         jiraMainPage = new JiraMainPage(getWebDriver());
         ticketDetails = new TicketDetails(getWebDriver());
@@ -73,5 +76,8 @@ public class AddCommentToTheTicket {
 
     }
 
-
+    @AfterMethod
+    public void tearDown(){
+        close();
+    }
 }

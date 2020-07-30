@@ -1,12 +1,14 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="My Tests" parallel="classes" thread-count="2">
+<suite name="My Tests" parallel="false">
+<!--    <suite name="My Tests" parallel="classes" thread-count="2">-->
+
 
     <test name="Jira Tests">
         <parameter name="browserName" value="chrome"/>
         <classes>
-            <class name="SampleSelenideTest"/>
             <class name="CreateTicket"/>
             <class name="AddCommentToTheTicket"/>
+            <class name="LoginPositiveAndNegativeTests"/>
         </classes>
     </test>
 

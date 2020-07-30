@@ -22,24 +22,25 @@ public class LoginPositiveAndNegativeTests {
         open();
         loginPage = new LoginPage(getWebDriver());
         jiraMainPage = new JiraMainPage(getWebDriver());
+        Configuration.timeout = 10000;
     }
 
-    @DataProvider(name = "Logins")
-    public Object[][] createData(){
-        return new Object[][]{
-                {"poshyvailov2", "poshyvailov33", "Sorry, your username and password are incorrect - please try again."},
-                {"bla bla", " ", "Sorry, your username and password are incorrect - please try again."},
-        };
-    }
-
-    @Test(dataProvider = "Logins")
-    public void loginWithWrongData(String userName, String userPass, String expectedResult)throws InterruptedException{
-        loginPage.openTestPage();
-        loginPage.enterUserName(userName);
-        loginPage.enterUserPassword(userPass);
-        loginPage.clickLoginButton();
-        loginPage.isErrorsMessageIsShown(expectedResult);
-    }
+//    @DataProvider(name = "Logins")
+//    public Object[][] createData(){
+//        return new Object[][]{
+//                {"poshyvailov2", "poshyvailov33", "Sorry, your username and password are incorrect - please try again."},
+//                {"bla bla", " ", "Sorry, your username and password are incorrect - please try again."},
+//        };
+//    }
+//
+//    @Test(dataProvider = "Logins")
+//    public void loginWithWrongData(String userName, String userPass, String expectedResult)throws InterruptedException{
+//        loginPage.openTestPage();
+//        loginPage.enterUserName(userName);
+//        loginPage.enterUserPassword(userPass);
+//        loginPage.clickLoginButton();
+//        loginPage.isErrorsMessageIsShown(expectedResult);
+//    }
 
     @Parameters({"browserName"})
     @Test()
@@ -55,6 +56,7 @@ public class LoginPositiveAndNegativeTests {
 
     @AfterMethod
     public void tearDown(){
+        close();
     }
 
 
