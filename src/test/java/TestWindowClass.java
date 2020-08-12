@@ -7,6 +7,14 @@ public class TestWindowClass implements Comparable <TestWindowClass> {
     private String windowColor;
 
 
+    public int getWindowPrice() {
+        return windowPrice;
+    }
+
+    public int getWindowSize() {
+        return windowSize;
+    }
+
     public TestWindowClass(int windowSize, int windowPrice, String windowColor) {
         this.windowSize = windowSize;
         this.windowPrice = windowPrice;

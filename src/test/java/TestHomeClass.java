@@ -43,6 +43,35 @@ public class TestHomeClass {
         for(Map.Entry<TestWindowClass, Integer> entry: map.entrySet()){
             System.out.println(entry.getKey());
         }
+        System.out.println();
+
+
+        //Кладем объекты класса testWindowPriceComparator и выводим отсортированные значение
+        Map<TestWindowClass,Integer> mapForPriceComparator = new TreeMap<>(new testWindowPriceComparator());
+        map.put(window1, 1);
+        map.put(window2, 2);
+        map.put(window3, 3);
+        map.put(window4, 4);
+
+        System.out.println("Results of sorting by mapForPriceComparator");
+        for(Map.Entry<TestWindowClass, Integer> entry: map.entrySet()){
+            System.out.println(entry.getKey());
+        }
+        System.out.println();
+
+
+        //Кладем объекты класса testWindowSizeComparator и выводим отсортированные значение
+        Map<TestWindowClass,Integer> mapForSizeComparator = new TreeMap<>(new testWindowSizeComparator());
+        map.put(window1, 1);
+        map.put(window2, 2);
+        map.put(window3, 3);
+        map.put(window4, 4);
+
+        System.out.println("Results of sorting by mapForSizeComparator");
+        for(Map.Entry<TestWindowClass, Integer> entry: map.entrySet()){
+            System.out.println(entry.getKey());
+        }
+
     }
 
 
